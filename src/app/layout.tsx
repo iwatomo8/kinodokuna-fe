@@ -1,10 +1,9 @@
 import { Toaster } from "@/components/ui/toaster";
 import "./globals.css";
+import { Navbar } from "@/components/Navbar";
 import { Providers } from "@/components/Providers";
-import { Button } from "@/components/ui/button";
 import type { Metadata } from "next";
 import { Geist, Azeret_Mono as Geist_Mono } from "next/font/google";
-import Link from "next/link";
 
 const geistSans = Geist({
   subsets: ["latin"],
@@ -31,22 +30,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} font-sans antialiased`}
       >
         <Providers>
-          <header className="border-b">
-            <nav className="container mx-auto py-4 flex justify-between items-center">
-              <Link href="/" className="text-xl font-bold">
-                支援マッチング
-              </Link>
-              <div className="space-x-4">
-                <Button variant="ghost" asChild>
-                  <Link href="/projects">案件一覧</Link>
-                </Button>
-                <Button variant="outline" asChild>
-                  <Link href="/login">ログイン</Link>
-                </Button>
-                <Button>新規登録</Button>
-              </div>
-            </nav>
-          </header>
+          <Navbar />
           <main>{children}</main>
           <footer className="border-t mt-8">
             <div className="container mx-auto py-4 text-center text-sm text-muted-foreground">
