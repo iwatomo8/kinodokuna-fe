@@ -9,7 +9,11 @@
     "test": "vitest",
     "lint": "biome lint --fix ./src",
     "format": "biome format --fix ./src",
-    "check": "biome check --fix ./src"
+    "check": "biome check --fix ./src",
+    "prepare": "husky"
+  },
+  "lint-staged": {
+    "**/*.{js,jsx,ts,tsx}": "pnpm run check"
   },
   "dependencies": {
     "next": "15.1.4",
@@ -24,7 +28,9 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "@vitejs/plugin-react": "^4.3.4",
+    "husky": "^9.1.7",
     "jsdom": "^26.0.0",
+    "lint-staged": "^15.3.0",
     "postcss": "^8",
     "tailwindcss": "^3.4.1",
     "typescript": "^5",
