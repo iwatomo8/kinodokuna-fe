@@ -1,5 +1,6 @@
 import { Toaster } from "@/components/ui/toaster";
 import "./globals.css";
+import { Providers } from "@/components/Providers";
 import { Button } from "@/components/ui/button";
 import type { Metadata } from "next";
 import { Geist, Azeret_Mono as Geist_Mono } from "next/font/google";
@@ -29,27 +30,31 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} font-sans antialiased`}
       >
-        <header className="border-b">
-          <nav className="container mx-auto py-4 flex justify-between items-center">
-            <Link href="/" className="text-xl font-bold">
-              支援マッチング
-            </Link>
-            <div className="space-x-4">
-              <Button variant="ghost" asChild>
-                <Link href="/projects">案件一覧</Link>
-              </Button>
-              <Button variant="outline">ログイン</Button>
-              <Button>新規登録</Button>
+        <Providers>
+          <header className="border-b">
+            <nav className="container mx-auto py-4 flex justify-between items-center">
+              <Link href="/" className="text-xl font-bold">
+                支援マッチング
+              </Link>
+              <div className="space-x-4">
+                <Button variant="ghost" asChild>
+                  <Link href="/projects">案件一覧</Link>
+                </Button>
+                <Button variant="outline" asChild>
+                  <Link href="/login">ログイン</Link>
+                </Button>
+                <Button>新規登録</Button>
+              </div>
+            </nav>
+          </header>
+          <main>{children}</main>
+          <footer className="border-t mt-8">
+            <div className="container mx-auto py-4 text-center text-sm text-muted-foreground">
+              © 2024 支援マッチングプラットフォーム
             </div>
-          </nav>
-        </header>
-        <main>{children}</main>
-        <footer className="border-t mt-8">
-          <div className="container mx-auto py-4 text-center text-sm text-muted-foreground">
-            © 2024 支援マッチングプラットフォーム
-          </div>
-        </footer>
-        <Toaster />
+          </footer>
+          <Toaster />
+        </Providers>
       </body>
     </html>
   );
