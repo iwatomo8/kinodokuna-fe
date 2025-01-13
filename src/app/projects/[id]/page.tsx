@@ -5,8 +5,11 @@ import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
-export default function ProjectPage({ params }: { params: { id: string } }) {
-  const project = mockProjects.find((p) => p.id === params.id);
+type Params = Promise<{ id: string }>;
+
+export default async function ProjectPage({ params }: { params: Params }) {
+  const { id } = await params;
+  const project = mockProjects.find((p) => p.id === id);
 
   if (!project) {
     notFound();
@@ -62,7 +65,7 @@ export default function ProjectPage({ params }: { params: { id: string } }) {
         </div>
         <div className="mt-4">
           <Button asChild>
-            <Link href={`/projects/${params.id}/offer`}>支援を申し出る</Link>
+            <Link href={`/projects/${id}/offer`}>支援を申し出る</Link>
           </Button>
         </div>
       </div>
