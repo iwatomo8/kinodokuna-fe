@@ -9,6 +9,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import type { Project } from "@/types/project";
+import Link from "next/link";
 
 export function ProjectCard({ project }: { project: Project }) {
   return (
@@ -19,7 +20,7 @@ export function ProjectCard({ project }: { project: Project }) {
       </CardHeader>
       <CardContent>
         <p className="text-sm text-muted-foreground mb-2">
-          {project.description}
+          {project.description.substring(0, 100)}...
         </p>
         <div className="flex gap-2">
           <Badge
@@ -34,7 +35,9 @@ export function ProjectCard({ project }: { project: Project }) {
         <p className="text-sm text-muted-foreground">
           作成日: {project.createdAt}
         </p>
-        <Button variant="outline">詳細を見る</Button>
+        <Button variant="outline" asChild>
+          <Link href={`/projects/${project.id}`}>詳細を見る</Link>
+        </Button>
       </CardFooter>
     </Card>
   );

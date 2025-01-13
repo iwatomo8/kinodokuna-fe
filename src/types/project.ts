@@ -6,4 +6,7 @@ export type Project = {
   type: "support" | "offer";
   category: string;
   createdAt: string;
+  contact: string;
+  website: string;
+  location: string;
 };
