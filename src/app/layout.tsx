@@ -1,3 +1,4 @@
+import { Toaster } from "@/components/ui/toaster";
 import "./globals.css";
 import { Button } from "@/components/ui/button";
 import type { Metadata } from "next";
@@ -48,6 +49,7 @@ export default function RootLayout({
             © 2024 支援マッチングプラットフォーム
           </div>
         </footer>
+        <Toaster />
       </body>
     </html>
   );

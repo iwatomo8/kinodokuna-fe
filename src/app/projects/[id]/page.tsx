@@ -61,7 +61,9 @@ export default function ProjectPage({ params }: { params: { id: string } }) {
           </p>
         </div>
         <div className="mt-4">
-          <Button>支援を申し出る</Button>
+          <Button asChild>
+            <Link href={`/projects/${params.id}/offer`}>支援を申し出る</Link>
+          </Button>
         </div>
       </div>
     </div>
