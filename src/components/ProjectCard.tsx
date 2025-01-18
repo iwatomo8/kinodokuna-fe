@@ -15,12 +15,14 @@ export function ProjectCard({ project }: { project: Project }) {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>{project.title}</CardTitle>
-        <CardDescription>{project.organization}</CardDescription>
+        <CardTitle className="line-clamp-1">{project.title}</CardTitle>
+        <CardDescription className="line-clamp-1">
+          {project.organization}
+        </CardDescription>
       </CardHeader>
       <CardContent>
-        <p className="text-sm text-muted-foreground mb-2">
-          {project.description.substring(0, 100)}...
+        <p className="text-sm text-muted-foreground mb-2 line-clamp-2">
+          {project.description}
         </p>
         <div className="flex gap-2">
           <Badge
