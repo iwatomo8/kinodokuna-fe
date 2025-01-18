@@ -3,7 +3,6 @@ export type Project = {
   title: string;
   organization: string;
   description: string;
-  type: "support" | "offer";
   category: string;
   createdAt: string;
   contact: string;

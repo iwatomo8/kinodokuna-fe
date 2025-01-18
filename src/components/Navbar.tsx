@@ -32,9 +32,6 @@ export function Navbar() {
               <Button variant="outline" asChild>
                 <Link href="/login">ログイン</Link>
               </Button>
-              <Button asChild>
-                <Link href="/register">新規登録</Link>
-              </Button>
             </>
           )}
         </div>
