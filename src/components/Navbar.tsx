@@ -11,7 +11,7 @@ export function Navbar() {
     <header className="border-b">
       <nav className="container mx-auto py-4 flex justify-between items-center">
         <Link href="/" className="text-xl font-bold">
-          支援マッチング
+          きのどくなー
         </Link>
         <div className="space-x-4">
           <Button variant="ghost" asChild>
