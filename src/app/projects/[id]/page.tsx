@@ -27,11 +27,6 @@ export default async function ProjectPage({ params }: { params: Params }) {
       <h1 className="text-3xl font-bold mb-4">{project.title}</h1>
       <div className="grid gap-6">
         <div className="flex flex-wrap gap-2">
-          <Badge
-            variant={project.type === "support" ? "destructive" : "default"}
-          >
-            {project.type === "support" ? "支援要請" : "支援提供"}
-          </Badge>
           <Badge variant="outline">{project.category}</Badge>
         </div>
         <div>

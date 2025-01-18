@@ -25,11 +25,6 @@ export function ProjectCard({ project }: { project: Project }) {
           {project.description}
         </p>
         <div className="flex gap-2">
-          <Badge
-            variant={project.type === "support" ? "destructive" : "default"}
-          >
-            {project.type === "support" ? "支援要請" : "支援提供"}
-          </Badge>
           <Badge variant="outline">{project.category}</Badge>
         </div>
       </CardContent>
